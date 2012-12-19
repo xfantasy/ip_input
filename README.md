@@ -8,15 +8,15 @@
 
 ## 使用说明
 
-<code lang='javascript'>
+<pre lang='javascript'>
 seajs.use(['ipinput', '$'], function(ipinput, $){
   var ip = new ipinput({
     field : $('#ip-input'),
     splitSymbol : '-'
   }).render();
 });
-</code>
+</pre>
 
 参数说明
-* field : 表单中原始IP字段
+* field : 表单中原始IP字段, 可以是一个DOM对象/jQuery对象/sizzle选择器，必填
 * splitSymbol : IP字段中的分隔符，默认为"."，可选
