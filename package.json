@@ -1,0 +1,25 @@
+{
+    "name": "ipinput",
+    "version": "1.0.0",
+    "root": "alipay",
+    "description": "",
+    "homepage": "",
+    "author": "",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "bugs": {
+        "url": ""
+    },
+    "license": "MIT",
+    "dependencies": {
+        "$" : "$",
+        "widget" : "arale/widget/1.0.2/widget",
+        "templatable" : "arale/widget/1.0.2/templatable"
+    },
+    "tests": ["ipinput"],
+    "output": {
+        "ipinput.js": "."
+    }
+}

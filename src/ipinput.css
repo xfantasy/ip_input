@@ -1,0 +1,29 @@
+.ip-input{
+  display: inline-block;
+  border: 1px solid #ccc;
+  padding: 2px;
+}
+.ip-input input:after{
+  content: 'kkkk';
+}
+.ip-input input{
+  display: inline-block;
+  float: left;
+  width: 2em;
+  text-align: center;
+  border: none;
+}
+.ip-input .split{
+  float: left;
+  vertical-align: top;
+  font-size: 11px;
+  color: #999;
+}
+.ip-input .split:last-child{
+  display: none;
+}
+.ip-input input[type=number]::-webkit-inner-spin-button,
+.ip-input input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
