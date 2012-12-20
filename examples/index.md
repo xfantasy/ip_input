@@ -3,9 +3,9 @@
 
 ----------------------------
 <form >
-  <div id='ddd'>
-    <input type='text' value='202-96-128-86' id='ip-input' />
-  </div>
+    <input type='text' value='202-96-128-86' class='ip-input' />
+
+    <input type='text' value='202-00-128-86' class='ip-input' />
 
   <br/>
   <br/>
@@ -16,9 +16,11 @@
 
 ````javascript
 seajs.use(['ipinput', '$'], function(ipinput, $){
-  var ip = new ipinput({
-    field : $('#ip-input'),
-    splitSymbol : '-'
-  }).render();
+  $('.ip-input').each(function() {
+    var ip = new ipinput({
+      field : this,
+      splitSymbol : '-'
+    }).render();
+  });
 });
 ````

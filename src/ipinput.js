@@ -4,7 +4,7 @@
  * last modify : 2012.12.19
  */
 
-define(function(require, exports, module) {
+ define(function(require, exports, module) {
   require('./ipinput.css');
 
   var Templatable = require('templatable');
@@ -48,10 +48,16 @@ define(function(require, exports, module) {
         target.val(_filterValue(target));
         this._syncFieldValue();
       },
+      'click input' : function(e) {
+        var target = $(e.target);
+        target.select();
+      },
       'keyup input' : function(e) {
         var target = $(e.target);
         var keyCode = e.keyCode || e.which;
-        target.val(_filterValue(target));
+        if (keyCode != 9 && keyCode != 16) {
+          target.val(_filterValue(target));
+        }
         //输入"."可以跳到下一个输入框
         if (keyCode == 190) {
           this._focusNextElement(target);
@@ -81,7 +87,7 @@ define(function(require, exports, module) {
 
   var _filterValue = function(target) {
     var val = target.val().replace(/\D/g, '') * 1;
-    return val > 255 ? 255 : (val == 0 ? '' : val);
+    return val > 255 ? 255 : (val == 0 ? '0' : val);
   };
 
   module.exports = Ipinput;
